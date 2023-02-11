@@ -1,8 +1,19 @@
 
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+	
+
+  @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+
+
 		*{
 			margin: 20px 50px 0;
 			padding: 0;
-			 font-family: 'Libre Baskerville', serif;
+			 font-family: 'Roboto Slab', serif;
 			text-align: center;
 			/*background: #9bb55e;*/
 
@@ -15,6 +26,7 @@ background-repeat: no-repeat;
 
 }
 		button{
+			font-family: 'Nova Square', cursive;
 			text-align: center !important;
 			box-shadow: 3px 4px 3px 2px #ba4978;
 			border-radius: 25px;
@@ -40,12 +52,7 @@ background-repeat: no-repeat;
 			
 
 		}
-		h2{
-			font-size: 50px;
-			letter-spacing: 10px;
-			font-weight: bold;
-                        color:#f01e13;
-		}
+		
 		h3{
 			font-size: 40px;
 			letter-spacing: 5px;
@@ -68,6 +75,11 @@ background-repeat: no-repeat;
      text-align: center;
     font-size: 35px;
     color: #06360a;
+  
+		}
+		i{
+      font-size: 38px !important;
+			font-family: 'Roboto Slab', serif !important;
 		}
 		/*loader style*/
 	#loader {
@@ -91,9 +103,12 @@ background-repeat: no-repeat;
   100% { transform: rotate(360deg); }
 }
 /*glowing text*/
-.glow {
+.glow,i{
+	font-family: 'Dancing Script', cursive;
   font-size: 50px;
   color: #fff;
+ 	letter-spacing: 10px;
+ 	font-weight: bold;
   text-align: center;
   animation: glow 1s ease-in-out infinite alternate;
 }
