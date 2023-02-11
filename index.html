@@ -8,10 +8,6 @@
   <meta name="keywords" content="HTML, CSS, JavaScript">
   <meta name="author" content="Ibbu">
 	<title>Number guess</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="guess.css">
@@ -201,7 +197,7 @@ navigator.vibrate([50]);
         //  snd.play()}
 switch (result) {case 0:answer="'FIVE'";new Audio('sounds/five.mp3').play();break;case 10:answer = "'FOUR'";new Audio('sounds/four.mp3').play();break;case 20:answer = "'SIX'";new Audio('sounds/six.mp3').play();break;case 30:answer = "'ZERO'";new Audio('sounds/zero.mp3').play();break;case 40:answer = "'ONE'";new Audio('sounds/one.mp3').play();break;case 50:answer = "'TWO'";new Audio('sounds/two.mp3').play();break;case 60:answer = "'TEN'";new Audio('sounds/ten.mp3').play();break;case  70:answer = "'THREE'";new Audio('sounds/three.mp3').play();break;case  80:answer = "'NINE'";new Audio('sounds/nine.mp3').play();break;case  90:answer = "'SEVEN'";new Audio('sounds/seven.mp3').play();break;case  100:answer = "'EIGHT'";new Audio('sounds/eight.mp3').play();}
 
-      	document.getElementById('ans').innerHTML="The Number You Thought of Was"+"  :"+'<i style="color:#a11313;background:black;border-radius:50px;padding:6px;letter-spacing:3px;">'+answer+'</i>';
+      	document.getElementById('ans').innerHTML="The Number You Thought of Was"+"  :"+'<i>'+answer+'</i>';
       }
 		
 	</script>
