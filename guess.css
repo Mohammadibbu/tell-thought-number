@@ -110,7 +110,7 @@ background-repeat: no-repeat;
  	letter-spacing: 10px;
  	font-weight: bold;
   text-align: center;
-  animation: glow 1s ease-in-out infinite alternate;
+  animation: glow .7s ease-in-out infinite alternate;
 }
 
 @-webkit-keyframes glow {
