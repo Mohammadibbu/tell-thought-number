@@ -25,6 +25,13 @@ background-repeat: no-repeat;
   background-size: cover;
 
 }
+             marquee{
+             border-radius: 50px;
+         Color:blue;
+          Font-size:27px;
+      
+          
+         }
 		button{
 			font-family: 'Nova Square', cursive;
 			text-align: center !important;
