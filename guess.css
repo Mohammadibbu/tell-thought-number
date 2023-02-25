@@ -26,9 +26,10 @@ background-repeat: no-repeat;
 
 }
              marquee{
+background-color: #262e8a;
              border-radius: 50px;
-         Color:blue;
-          Font-size:27px;
+         color:blue;
+         font-size:27px;
       
           
          }
