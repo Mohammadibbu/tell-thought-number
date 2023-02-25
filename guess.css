@@ -37,8 +37,8 @@ background-repeat: no-repeat;
 			font-family: 'Nova Square', cursive;
 			text-align: center !important;
 			box-shadow: 3px 4px 3px 2px #ba4978;
-			border-radius: 25px;
-			padding: 6px;
+			border-radius: 40px;
+			padding: 8px;
 			width: 250px;
 			font-size: 30px;
 			border: 2px solid #1c0f0f;
@@ -46,17 +46,17 @@ background-repeat: no-repeat;
 			background: rgb(159,50,232);
 background: linear-gradient(90deg, rgba(159,50,232,1) 0%, rgba(252,209,209,1) 48%, rgba(105,217,63,1) 98%);
 			cursor: pointer;
-			color: #d28be0;
+			color: black;
 			transition: .5s;
 		}button:hover{
-			border-radius: 20px;
-			padding: 2px;
+			border-radius: 30px;
+			padding: 5px;
 			width: 300px;
 			font-size: 33px;
 			border: 2px solid #112c20;
 			letter-spacing: 1px;
 			background-color: #6b73c9;
-			color: #4f161a;
+			
 			font-size: 35px;
 			
 
