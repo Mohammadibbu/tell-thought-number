@@ -12,7 +12,7 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="guess.css">
 </head>
-<body>
+<body ononline="on()" onoffline="of()">
 	<center>
 	<h4 style="color: #410d5c;" title="அல்லாஹ்வின் திருப்பெயரால்">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h4>
 	<div id="mainpage">
@@ -204,6 +204,12 @@ switch (result) {case 0:answer="'FIVE'";new Audio('sounds/five.mp3').play();brea
           document.getElementById('fb').href ="mailto:mohammmadibbu008@gmail.com";
           setTimeout(()=>{document.getElementById('fb').href ="#";},2000);
         }else{document.getElementById('fb').href ="#";}
+}
+function on(){
+  document.getElementByTagName('center').style.display="block";
+}
+function of(){
+  document.getElementByTagName('center').style.display="none";
 }	
 	</script>
 </body>
