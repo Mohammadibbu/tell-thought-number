@@ -1,17 +1,19 @@
 // check online offline using online offline attribute
-		function on(){
+function on(){
 
   document.getElementById('center').style.display="block";
   document.getElementById('online').style.display="block";
   document.getElementById('offline').style.display="none";
-
+  navigator.vibrate([50,100,200]);
   setTimeout(()=>{document.getElementById('online').style.display="none";},3000);
 }
 function of(){
+    navigator.vibrate([50,200,200,200]);
 	Audiohelp.pause();
   document.getElementById('center').style.display="none";
   document.getElementById('offline').style.display="block";
 }	
+//assign variables
 		let loader=document.getElementById("loader");
 		let restart=document.getElementById("restart");
 
@@ -127,7 +129,7 @@ navigator.vibrate([50]);
 
            }
 
-      
+   //answer   
       function answer() {
 
          // resultbtn.style.display = "none";
@@ -140,6 +142,7 @@ navigator.vibrate([50]);
       	// function sound(){
       	// var snd = new Audio('onru.mp3')//wav is also supported
         //  snd.play()}
+//using switch case
 switch (result) {case 0:answer="'FIVE'";new Audio('sounds/five.mp3').play();break;case 10:answer = "'FOUR'";new Audio('sounds/four.mp3').play();break;case 20:answer = "'SIX'";new Audio('sounds/six.mp3').play();break;case 30:answer = "'ZERO'";new Audio('sounds/zero.mp3').play();break;case 40:answer = "'ONE'";new Audio('sounds/one.mp3').play();break;case 50:answer = "'TWO'";new Audio('sounds/two.mp3').play();break;case 60:answer = "'TEN'";new Audio('sounds/ten.mp3').play();break;case  70:answer = "'THREE'";new Audio('sounds/three.mp3').play();break;case  80:answer = "'NINE'";new Audio('sounds/nine.mp3').play();break;case  90:answer = "'SEVEN'";new Audio('sounds/seven.mp3').play();break;case  100:answer = "'EIGHT'";new Audio('sounds/eight.mp3').play();}
 
       	document.getElementById('ans').innerHTML="The Number You Thought of Was"+"  :"+'<i>'+answer+'</i>';
@@ -149,6 +152,7 @@ switch (result) {case 0:answer="'FIVE'";new Audio('sounds/five.mp3').play();brea
 	function feedback(){
        if (confirm("opening Gmail or Email")) {
           document.getElementById('fb').href ="mailto:mohammmadibbu008@gmail.com";
+          navigator.vibrate([50,100,50]);
           setTimeout(()=>{document.getElementById('fb').href ="#";},2000);
-        }else{document.getElementById('fb').href ="#";}
+        }else{document.getElementById('fb').href ="#";navigator.vibrate([100]);}
 }
