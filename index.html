@@ -13,40 +13,43 @@
 <link rel="stylesheet" type="text/css" href="guess.css">
 </head>
 <body ononline="on()" onoffline="of()">
-	<center>
+	<!-- online offline -->
+<div id="offline">  No Network Connection !</div>
+<div id="online"> Back Online !</div>
+
+<center id="center">
 	<h4 style="color: #410d5c;" title="அல்லாஹ்வின் திருப்பெயரால்">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ</h4>
 	<div id="mainpage">
 		<br><br><br><br>
-		<h4 id="start">Think any number between 0 to 10</h4>
+	<h4 id="start">Think any number between 0 to 10</h4>
 <br><br><br><br>
 		<button id="start" onclick="st();" >Click here to start</button>
-		
 	</div>
 	
 	<div id="step1" style="display: none;">
-	<h1>STEP(1/4)</h1>
-	<h3>If the number you thought was present in given below numbers.press 'yes' button, if not then press 'no' button</h3><br><br>
+	<h1>STEp(1/4)</h1>
+	<h3>If the number you thought was present in given below numbers.press 'YES' button, if not then press 'no' button</h3><br><br>
 	<h2 class="glow">4,8,3,0,9,10</h2><br><br>
 	<button value="10" id="step1y" onclick="stpy1()">yes</button>
 	<button value="0" id="step1n" onclick="stpn1()">No</button>
 </div>
 	<div id="step2" style="display: none;">
-		<h1>STEP(2/4)</h1>
-   <h3>If the number you thought was present in given below numbers.press 'yes' button, if not then press 'no' button</h3><br><br>
+		<h1>STeP(2/4)</h1>
+   <h3>If the number you thought was present in given below Numbers.press 'yes' Button, If not then press 'NO' button</h3><br><br>
     <h2 class="glow">3,8,6,7,2,0,10</h2><br><br>
 		<button value="20" id="step2y" onclick="stpy2()">yes</button>
 	<button value="0" id="step2n" onclick="stpn2()">No</button>
 	</div>
 <div id="step3" style="display: none;" >
-		<h1>STEP(3/4)</h1>
-<h3>If the number you thought was present in given below numbers.press 'yes' button, if not then press 'no' button</h3><br><br>
+		<h1>StEP(3/4)</h1>
+<h3>If the number you Thought was Present in given Below numbers.press 'YES' button, if not then press 'NO' button</h3><br><br>
 	<h2 class="glow">2,8,7,9,10</h2><br><br>
 		<button value="30" id="step3y" onclick="stpy3()">yes</button>
 	<button value="0" id="step3n" onclick="stpn3()">No</button>
 </div>	
 <div id="step4" style="display: none;">
-		<h1>STEP(4/4)</h1>
-<h3>If the number you thought was present in given below numbers.press 'yes' button, if not then press 'no' button</h3><br><br>
+		<h1>sTEP(4/4)</h1>
+<h3>If the number you thought was present in Given below numbers.Press 'yes' button, if not then Press 'no' button</h3><br><br>
 	<h2 class="glow">1,8,7,3,9</h2><br><br>
 		<button value="40" id="step4y" onclick="stpy4()">yes</button>
 	<button value="0" id="step4n" onclick="stpn4()">No</button>
@@ -66,152 +69,8 @@
 	<button onclick="reset()" id="restart" style="display:none;">RESTART</button>
 </div>
 </center>
-	<script type="text/javascript">
-		var loader=document.getElementById("loader");
-		var restart=document.getElementById("restart");
-
-		var stepone=document.getElementById("step1");
-		var steptwo=document.getElementById("step2");
-		var stepthree=document.getElementById("step3");
-		var stepfour=document.getElementById("step4");
-		// var resultbtn=document.getElementById("resultbtn");
-      	var  stp1y=Number(document.getElementById('step1y').value);
-      	var  stp1n=Number(document.getElementById('step1n').value);
-      	var  stp2y=Number(document.getElementById('step2y').value);
-      	var  stp2n=Number(document.getElementById('step2n').value);
-      	var  stp3y=Number(document.getElementById('step3y').value);
-      	var  stp3n=Number(document.getElementById('step3n').value);
-      	var  stp4y=Number(document.getElementById('step4y').value);
-      	var  stp4n=Number(document.getElementById('step4n').value);
-      	// click sound
-      	var click=new Audio('sounds/click.mp3');
- 
-      	// Audiohelp
-      	var Audiohelp=new Audio('sounds/help.mp3');
-      	function st(){
-      		navigator.vibrate([50]);
-      		click.play();
-      	document.getElementById('step1').style.display='block';document.
-      	getElementById('mainpage').style.display='none';
-        Audiohelp.play();
-      }
-//restart
-      	function reset(){
-      		navigator.vibrate([50]);
-      		click.play();
-      	loader.style.display="block";
-      	document.getElementById('ans').style.display="none";
-      	restart.style.display="none";
-           	     setTimeout(()=>{loader.style.display="none";location.reload()},3000);}
-
-
-// step1
-      	function stpy1(){
-      		navigator.vibrate([50]);
-      		Audiohelp.pause();
-      		click.play();
-           	yc1=stp1y;
-           	steptwo.style.display = "block";
-           	stepone.style.display = "none";
-           	
-           }
-    function stpn1(){
-      		  Audiohelp.pause();
-navigator.vibrate([50]);
-       click.play();
-      	yc1=stp1n;
-           steptwo.style.display = "block";
-           	stepone.style.display = "none";
-           	
-           }
-// step2
-      function stpy2(){
-      	navigator.vibrate([50]);
-      	 yc2=stp2y;
-      	 click.play();
-         stepthree.style.display = "block";
-           	steptwo.style.display = "none";
-           	
-           }
-           function stpn2(){
-           	navigator.vibrate([50]);
-           	click.play();
-      	yc2=stp1n;
-         stepthree.style.display = "block";
-           	steptwo.style.display = "none";
-           
-           }
-//step3
-           function stpy3(){
-           	navigator.vibrate([50]);
-           	click.play();
-      	yc3=stp3y;
-        stepfour.style.display = "block";
-           	stepthree.style.display = "none";
-           
-           }
-           function stpn3(){
-           	navigator.vibrate([50]);
-           	click.play();
-           	stepfour.style.display = "block";
-           	stepthree.style.display = "none";
-      	yc3=stp3n;
-
-           }
- //step4
-           function stpy4(){
-           	navigator.vibrate([50]);
-      	yc4=stp4y;
-      	click.play();
-         // resultbtn.style.display = "block";
-           	stepfour.style.display = "none";
-           	loader.style.display="block";
-           	      setTimeout(answer,1000);
-
-           }
-           function stpn4(){
-           	navigator.vibrate([50]);
-           	click.play();
-           	loader.style.display="block";
-
-           	// resultbtn.style.display = "block";
-           	stepfour.style.display = "none";
-      	yc4=stp4n;
-
-           	      setTimeout(answer,1700);
-
-           }
-
-      
-      function answer() {
-
-         // resultbtn.style.display = "none";
-           	loader.style.display="none";
-           	restart.style.display="block";
-       
-       
-      	var result=yc1+yc2+yc3+yc4;
-      	console.log(result);
-      	// function sound(){
-      	// var snd = new Audio('onru.mp3')//wav is also supported
-        //  snd.play()}
-switch (result) {case 0:answer="'FIVE'";new Audio('sounds/five.mp3').play();break;case 10:answer = "'FOUR'";new Audio('sounds/four.mp3').play();break;case 20:answer = "'SIX'";new Audio('sounds/six.mp3').play();break;case 30:answer = "'ZERO'";new Audio('sounds/zero.mp3').play();break;case 40:answer = "'ONE'";new Audio('sounds/one.mp3').play();break;case 50:answer = "'TWO'";new Audio('sounds/two.mp3').play();break;case 60:answer = "'TEN'";new Audio('sounds/ten.mp3').play();break;case  70:answer = "'THREE'";new Audio('sounds/three.mp3').play();break;case  80:answer = "'NINE'";new Audio('sounds/nine.mp3').play();break;case  90:answer = "'SEVEN'";new Audio('sounds/seven.mp3').play();break;case  100:answer = "'EIGHT'";new Audio('sounds/eight.mp3').play();}
-
-      	document.getElementById('ans').innerHTML="The Number You Thought of Was"+"  :"+'<i>'+answer+'</i>';
-      }
-	function feedback(){
-       if (confirm("opening Gmail or Email")) {
-          document.getElementById('fb').href ="mailto:mohammmadibbu008@gmail.com";
-          setTimeout(()=>{document.getElementById('fb').href ="#";},2000);
-        }else{document.getElementById('fb').href ="#";}
-}
-function on(){
-  document.getElementByTagName('center').style.display="block";
-}
-function of(){
-  document.getElementByTagName('center').style.display="none";
-}	
-	</script>
+ <!-- guess the number script -->
+<script type="text/javascript" src="../guess.js"></script>
 </body>
 <footer>
 <br><br><br><hr>
