@@ -1,0 +1,165 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+
+	
+
+  @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+
+
+		*{
+			margin: 20px 50px 0;
+			padding: 0;
+			 font-family: 'Roboto Slab', serif;
+			text-align: center;
+			/*background: #9bb55e;*/
+
+		}
+body{
+background-image: linear-gradient( 180.2deg,  rgba(42,245,152,1) 6%, rgba(8,174,234,1) 95.3% );
+background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+
+}
+   
+   #offline{
+       	font-family: 'Tiro Tamil', serif;
+       	display: none;
+       	box-shadow: 0 0 2px 2px red;
+       	margin-top: 5px;
+       	width: auto;
+       	font-size: 18px;
+       	color: white;
+       	font-weight: bold;
+       	padding: 10px 8px;
+       	background: red;
+       	text-align: center;
+       	border-radius: 10px;
+       	border: 2px solid #Ef9A9A;
+       }
+#online{
+	    font-family: 'Tiro Tamil', serif;
+       	display: none;
+       	box-shadow: 0 0 2px 2px #37eb23;
+       	margin-top: 5px;
+       	width: auto;
+       	font-size: 18px;
+       	color: white;
+       	font-weight: bold;
+       	padding: 10px 8px;
+       	background:#29f013 ;
+       	text-align: center;
+       	border-radius: 10px;
+       	border: 2px solid #1e7d14;
+       }
+             marquee{
+
+             border-radius: 60px;
+         color:#ba6ded;
+         font-size:24px;
+      
+          
+         }hr{color:red;}
+		button{
+			font-family: 'Nova Square', cursive;
+			text-align: center !important;
+			box-shadow: 3px 4px 3px 2px #ba4978;
+			border-radius: 40px;
+
+			padding: 8px;
+			width: 250px;
+			font-size: 32px;
+			border: 2px solid #1c0f0f;
+			letter-spacing: 3px;
+			background: rgb(159,50,232);
+background: linear-gradient(90deg, rgba(159,50,232,1) 0%, rgba(252,209,209,1) 48%, rgba(105,217,63,1) 98%);
+			cursor: pointer;
+			color: black;
+			transition: .5s;
+		}button:hover{
+			border-radius: 30px;
+			padding: 5px;
+			width: 300px;
+			font-size: 36px;
+			border: 2px solid #112c20;
+			letter-spacing: 1px;
+			background-color: #6b73c9;
+			
+			font-size: 35px;
+			
+
+		}
+		
+		h3{
+			font-size: 30px;
+			letter-spacing: 5px;
+			font-weight: bold;
+		}
+		h1{ 
+			border-width: 2px;
+			border-radius: 40px;
+			background: palevioletred;
+			letter-spacing: 15px;
+			font-weight:bold;
+		}
+         h4{
+         	font-size: 30px;
+            transition: .5s;
+         	letter-spacing: 3px;
+			
+		}
+		span{
+     text-align: center;
+    font-size: 35px;
+    color: #06360a;
+  
+		}
+		i{
+      font-size: 38px !important;
+			font-family: 'Roboto Slab', serif !important;
+		}
+		/*loader style*/
+	#loader {
+  border: 16px solid black;
+  border-radius: 50%;
+  border-top: 16px solid  #0052cc;
+  width: 120px;
+  height: 120px;
+  -webkit-animation: spin .7s linear infinite; /* Safari */
+  animation: spin .8s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+/*glowing text*/
+.glow,i{
+	font-family: 'Dancing Script', cursive;
+  font-size: 50px;
+  color: #fff;
+ 	letter-spacing: 10px;
+ 	font-weight: bold;
+  text-align: center;
+  animation: glow .7s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #6d0c3c, 0 0 40px #5f163b, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
