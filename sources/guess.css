@@ -81,7 +81,7 @@ background: linear-gradient(90deg, rgba(159,50,232,1) 0%, rgba(252,209,209,1) 48
 			cursor: pointer;
 			color: black;
 			transition: .5s;
-		}button: hover {
+		}button:hover {
 			border-radius: 30px;
 			padding: 5px;
                       text-transform: uppercase;
