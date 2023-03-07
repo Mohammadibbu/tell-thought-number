@@ -84,6 +84,7 @@ background: linear-gradient(90deg, rgba(159,50,232,1) 0%, rgba(252,209,209,1) 48
 		}button: hover {
 			border-radius: 30px;
 			padding: 5px;
+                      text-transform: uppercase;
 			width: 300px;
 			font-size: 36px;
 			border: 2px solid #112c20;
