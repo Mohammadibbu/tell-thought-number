@@ -19,6 +19,7 @@
 
 		}
 body{
+user-select:none;
 background-image: linear-gradient( 180.2deg,  rgba(42,245,152,1) 6%, rgba(8,174,234,1) 95.3% );
 background-repeat: no-repeat;
   background-attachment: fixed;  
@@ -80,7 +81,7 @@ background: linear-gradient(90deg, rgba(159,50,232,1) 0%, rgba(252,209,209,1) 48
 			cursor: pointer;
 			color: black;
 			transition: .5s;
-		}button:focus{
+		}button: hover {
 			border-radius: 30px;
 			padding: 5px;
 			width: 300px;
