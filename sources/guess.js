@@ -183,8 +183,9 @@ function answer() {
       new Audio("sounds/eight.mp3").play();
   }
 
-  document.getElementById("ans").innerHTML =
-    "The Number You Thought of Was <br><br><i>" + answer + "</i>";
+  document.getElementById(
+    "ans"
+  ).innerHTML = `<h4 class="lineLeft">The Number You Thought of Was<br><br><i class="glow">${answer}</i></h4>`;
 }
 
 // feedback confirmation
