@@ -53,7 +53,7 @@ function reset() {
   setTimeout(() => {
     loader.style.display = "none";
     location.reload();
-  }, 3000);
+  }, 1000);
 }
 
 // step1
@@ -111,7 +111,7 @@ function stpy4() {
   // resultbtn.style.display = "block";
   stepfour.style.display = "none";
   loader.style.display = "block";
-  setTimeout(answer, 1000);
+  setTimeout(answer, 1500);
 }
 function stpn4() {
   navigator.vibrate([50]);
@@ -122,7 +122,7 @@ function stpn4() {
   stepfour.style.display = "none";
   yc4 = stp4n;
 
-  setTimeout(answer, 1700);
+  setTimeout(answer, 1500);
 }
 
 //answer
@@ -184,7 +184,9 @@ function answer() {
   }
 
   document.getElementById("ans").innerHTML =
-    "The Number You Thought of Was" + "  :" + "<i>" + answer + "</i>";
+    "The Number You Thought of Was <br><br><i class='lineDown'>" +
+    answer +
+    "</i>";
 }
 
 // feedback confirmation

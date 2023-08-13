@@ -18,70 +18,92 @@
     <div id="online">Back Online !</div>
 
     <center id="center">
-      <h4 style="color: #410d5c" title="அல்லாஹ்வின் திருப்பெயரால்">
+      <h4
+        class="lineRight"
+        style="color: #410d5c"
+        title="அல்லாஹ்வின் திருப்பெயரால்"
+      >
         بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ
       </h4>
       <div id="mainpage">
         <br /><br /><br /><br />
-        <h4 class="header">Think any number between 0 to 10</h4>
+        <h4 class="header lineDown">Think any number between 0 to 10</h4>
         <br /><br /><br /><br />
-        <button id="start" onclick="st();">Click here to start</button>
+        <button id="start" onclick="st();" class="lineUp">
+          Click here to start
+        </button>
       </div>
 
       <div id="step1" style="display: none">
-        <h1>STEp(1/4)</h1>
-        <h3>
+        <h1 class="lineDown">STEp(1/4)</h1>
+        <h3 class="lineUp">
           If the number you thought was present in given below numbers.press
           'YES' button, if not then press 'no' button
         </h3>
         <br /><br />
-        <h2 class="glow">4,8,3,0,9,10</h2>
+        <h2 class="lineDown"><i class="glow">4,8,3,0,9,10</i></h2>
         <br /><br />
         <div class="flex">
-          <button value="10" id="step1y" onclick="stpy1()">yes</button>
-          <button value="0" id="step1n" onclick="stpn1()">No</button>
+          <button class="lineUp" value="10" id="step1y" onclick="stpy1()">
+            yes
+          </button>
+          <button class="lineDown" value="0" id="step1n" onclick="stpn1()">
+            No
+          </button>
         </div>
       </div>
       <div id="step2" style="display: none">
-        <h1>STeP(2/4)</h1>
-        <h3>
+        <h1 class="lineUp">STeP(2/4)</h1>
+        <h3 class="lineDown">
           If the number you thought was present in given below Numbers.press
           'yes' Button, If not then press 'NO' button
         </h3>
         <br /><br />
-        <h2 class="glow">3,8,6,7,2,0,10</h2>
+        <h2 class="lineUp"><i class="glow">3,8,6,7,2,0,10</i></h2>
         <br /><br />
         <div class="flex">
-          <button value="20" id="step2y" onclick="stpy2()">yes</button>
-          <button value="0" id="step2n" onclick="stpn2()">No</button>
+          <button value="20" id="step2y" onclick="stpy2()" class="lineDown">
+            yes
+          </button>
+          <button value="0" id="step2n" onclick="stpn2()" class="lineUp">
+            No
+          </button>
         </div>
       </div>
       <div id="step3" style="display: none">
-        <h1>StEP(3/4)</h1>
-        <h3>
+        <h1 class="lineUp">StEP(3/4)</h1>
+        <h3 class="lineLeft">
           If the number you Thought was Present in given Below numbers.press
           'YES' button, if not then press 'NO' button
         </h3>
         <br /><br />
-        <h2 class="glow">2,8,7,9,10</h2>
+        <h2 class="lineUp"><i class="glow">2,8,7,9,10</i></h2>
         <br /><br />
         <div class="flex">
-          <button value="30" id="step3y" onclick="stpy3()">yes</button>
-          <button value="0" id="step3n" onclick="stpn3()">No</button>
+          <button value="30" id="step3y" onclick="stpy3()" class="lineUp">
+            yes
+          </button>
+          <button value="0" id="step3n" onclick="stpn3()" class="lineDown">
+            No
+          </button>
         </div>
       </div>
-      <div id="step4" style="display: none">
-        <h1>sTEP(4/4)</h1>
-        <h3>
+      <div id="step4" style="display: none" class="lineRight">
+        <h1 class="lineDown">sTEP(4/4)</h1>
+        <h3 class="lineUp">
           If the number you thought was present in Given below numbers.Press
           'yes' button, if not then Press 'no' button
         </h3>
         <br /><br />
-        <h2 class="glow">1,8,7,3,9</h2>
+        <h2 class="lineRight"><i class="glow">1,8,7,3,9</i></h2>
         <br /><br />
         <div class="flex">
-          <button value="40" id="step4y" onclick="stpy4()">yes</button>
-          <button value="0" id="step4n" onclick="stpn4()">No</button>
+          <button value="40" id="step4y" onclick="stpy4()" class="lineUp">
+            yes
+          </button>
+          <button value="0" id="step4n" onclick="stpn4()" class="lineDown">
+            No
+          </button>
         </div>
       </div>
 
@@ -91,13 +113,16 @@
 </div> -->
       <div id="loader" style="display: none"></div>
       <div class="flex">
-        <br />
         <span id="ans"></span>
-        <br />
       </div>
       <br /><br /><br />
       <div class="flex">
-        <button onclick="reset()" id="restart" style="display: none">
+        <button
+          onclick="reset()"
+          id="restart"
+          style="display: none"
+          class="lineDown"
+        >
           RESTART
         </button>
       </div>
