@@ -1,12 +1,13 @@
 // check online offline using online offline attribute
-// function on(){
-
-//   document.getElementById('center').style.display="block";
-//   document.getElementById('online').style.display="block";
-//   document.getElementById('offline').style.display="none";
-//   navigator.vibrate([50,100,200]);
-//   setTimeout(()=>{document.getElementById('online').style.display="none";},3000);
-// }
+function on() {
+  document.getElementById("center").style.display = "block";
+  document.getElementById("online").style.display = "block";
+  document.getElementById("offline").style.display = "none";
+  navigator.vibrate([50, 100, 200]);
+  setTimeout(() => {
+    document.getElementById("online").style.display = "none";
+  }, 3000);
+}
 function of() {
   navigator.vibrate([50, 200, 200, 200]);
   Audiohelp.pause();
