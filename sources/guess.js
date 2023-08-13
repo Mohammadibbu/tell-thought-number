@@ -184,9 +184,7 @@ function answer() {
   }
 
   document.getElementById("ans").innerHTML =
-    "The Number You Thought of Was <br><br><i class='lineDown'>" +
-    answer +
-    "</i>";
+    "The Number You Thought of Was <br><br><i>" + answer + "</i>";
 }
 
 // feedback confirmation
