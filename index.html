@@ -37,8 +37,10 @@
         <br /><br />
         <h2 class="glow">4,8,3,0,9,10</h2>
         <br /><br />
-        <button value="10" id="step1y" onclick="stpy1()">yes</button>
-        <button value="0" id="step1n" onclick="stpn1()">No</button>
+        <div class="flex">
+          <button value="10" id="step1y" onclick="stpy1()">yes</button>
+          <button value="0" id="step1n" onclick="stpn1()">No</button>
+        </div>
       </div>
       <div id="step2" style="display: none">
         <h1>STeP(2/4)</h1>
@@ -49,8 +51,10 @@
         <br /><br />
         <h2 class="glow">3,8,6,7,2,0,10</h2>
         <br /><br />
-        <button value="20" id="step2y" onclick="stpy2()">yes</button>
-        <button value="0" id="step2n" onclick="stpn2()">No</button>
+        <div class="flex">
+          <button value="20" id="step2y" onclick="stpy2()">yes</button>
+          <button value="0" id="step2n" onclick="stpn2()">No</button>
+        </div>
       </div>
       <div id="step3" style="display: none">
         <h1>StEP(3/4)</h1>
@@ -61,8 +65,10 @@
         <br /><br />
         <h2 class="glow">2,8,7,9,10</h2>
         <br /><br />
-        <button value="30" id="step3y" onclick="stpy3()">yes</button>
-        <button value="0" id="step3n" onclick="stpn3()">No</button>
+        <div class="flex">
+          <button value="30" id="step3y" onclick="stpy3()">yes</button>
+          <button value="0" id="step3n" onclick="stpn3()">No</button>
+        </div>
       </div>
       <div id="step4" style="display: none">
         <h1>sTEP(4/4)</h1>
@@ -73,8 +79,10 @@
         <br /><br />
         <h2 class="glow">1,8,7,3,9</h2>
         <br /><br />
-        <button value="40" id="step4y" onclick="stpy4()">yes</button>
-        <button value="0" id="step4n" onclick="stpn4()">No</button>
+        <div class="flex">
+          <button value="40" id="step4y" onclick="stpy4()">yes</button>
+          <button value="0" id="step4n" onclick="stpn4()">No</button>
+        </div>
       </div>
 
       <!-- <div id="resultbtn" style="display: none;">		
@@ -82,13 +90,13 @@
 <br>
 </div> -->
       <div id="loader" style="display: none"></div>
-      <div>
+      <div class="flex">
         <br />
         <span id="ans"></span>
         <br />
       </div>
       <br /><br /><br />
-      <div>
+      <div class="flex">
         <button onclick="reset()" id="restart" style="display: none">
           RESTART
         </button>
