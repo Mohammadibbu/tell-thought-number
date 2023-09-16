@@ -191,7 +191,7 @@ function answer() {
 // feedback confirmation
 function feedback() {
   if (confirm("opening Gmail or Email")) {
-    document.getElementById("fb").href = "mailto:mohammmadibbu008@gmail.com";
+    document.getElementById("fb").href = "mailto:mohammmadibbudummyacc235@gmail.com";
     navigator.vibrate([50, 100, 50]);
     setTimeout(() => {
       document.getElementById("fb").href = "#";
