@@ -55,10 +55,8 @@ Contributions are welcome! If you’d like to improve the game or suggest new fe
 - **Bootstrap** – for responsive design.
 - **Google Fonts** – for adding elegant typography to the application.
 
-## **License**
-This project is open-source and available under the [MIT License](LICENSE).
 
 ---
 
 Feel free to modify the content or add any additional sections that fit your project needs!
-https://mohammadibbu.github.io/tell-thought-number/
+Live SIte :https://mohammadibbu.github.io/GuessMaster/
