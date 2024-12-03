@@ -1,94 +1,111 @@
-// Utility Functions
-function showElement(elementId) {
-  document.getElementById(elementId).style.display = "block";
+// Helper functions for vibration and audio
+function playVibration(pattern) {
+  navigator.vibrate(pattern);
 }
-
-function hideElement(elementId) {
-  document.getElementById(elementId).style.display = "none";
-}
-
-function playAudio(audioFile) {
-  const audio = new Audio(audioFile);
+function playAudio(src) {
+  const audio = new Audio(src);
   audio.play();
 }
 
-function vibrate(pattern) {
-  if (navigator.vibrate) {
-    navigator.vibrate(pattern);
-  }
+// Online/Offline handlers
+function handleOnline() {
+  toggleVisibility("center", true);
+  toggleVisibility("online", true);
+  toggleVisibility("offline", false);
+  playVibration([50, 100, 200]);
+  setTimeout(() => toggleVisibility("online", false), 3000);
 }
-
-// Online/Offline Handlers
-function on() {
-  vibrate([50, 100, 200]);
-  showElement("center");
-  showElement("online");
-  hideElement("offline");
-  setTimeout(() => hideElement("online"), 3000);
-}
-
-function of() {
-  vibrate([50, 200, 200, 200]);
+function handleOffline() {
+  playVibration([50, 200, 200, 200]);
+  toggleVisibility("center", false);
+  toggleVisibility("offline", true);
   Audiohelp.pause();
-  hideElement("center");
-  showElement("offline");
 }
 
-// Variables
+// Utility function to toggle element visibility
+function toggleVisibility(id, show) {
+  document.getElementById(id).style.display = show ? "block" : "none";
+}
+
+// Initialize variables
 const loader = document.getElementById("loader");
 const restart = document.getElementById("restart");
-const steps = ["step1", "step2", "step3", "step4"];
-const clickAudio = "sounds/click.mp3";
-const helpAudio = new Audio("sounds/help.mp3");
-let currentStep = 0;
-let result = 0;
 
-// Start Game
-function startGame() {
-  vibrate([50]);
-  playAudio(clickAudio);
-  hideElement("mainpage");
-  showElement(steps[currentStep]);
+const stepone = document.getElementById("step1");
+const steptwo = document.getElementById("step2");
+const stepthree = document.getElementById("step3");
+const stepfour = document.getElementById("step4");
+
+let stp1y = Number(document.getElementById("step1y").value);
+let stp1n = Number(document.getElementById("step1n").value);
+let stp2y = Number(document.getElementById("step2y").value);
+let stp2n = Number(document.getElementById("step2n").value);
+let stp3y = Number(document.getElementById("step3y").value);
+let stp3n = Number(document.getElementById("step3n").value);
+let stp4y = Number(document.getElementById("step4y").value);
+let stp4n = Number(document.getElementById("step4n").value);
+
+const clickSound = "sounds/click.mp3";
+const helpAudio = new Audio("sounds/help.mp3");
+
+// Step navigation functions
+function start() {
+  playVibration([50]);
+  playAudio(clickSound);
+  toggleVisibility("step1", true);
+  toggleVisibility("mainpage", false);
   helpAudio.play();
 }
-
-// Restart Game
-function resetGame() {
-  vibrate([50]);
-  playAudio(clickAudio);
-  showElement("loader");
-  hideElement("ans");
-  hideElement("restart");
+function reset() {
+  playVibration([50]);
+  playAudio(clickSound);
+  toggleVisibility("loader", true);
+  toggleVisibility("ans", false);
+  toggleVisibility("restart", false);
   setTimeout(() => {
+    toggleVisibility("loader", false);
     location.reload();
   }, 1000);
 }
 
-// Handle Step Buttons
-function handleStepResponse(value) {
-  vibrate([50]);
-  playAudio(clickAudio);
+// Step handlers
+function handleStep(stepNum, value) {
+  playVibration([50]);
+  playAudio(clickSound);
   helpAudio.pause();
-  result += value;
 
-  // Move to the next step or show the result
-  if (currentStep < steps.length - 1) {
-    hideElement(steps[currentStep]);
-    currentStep++;
-    showElement(steps[currentStep]);
-  } else {
-    hideElement(steps[currentStep]);
-    showElement("loader");
-    setTimeout(showResult, 1500);
+  switch (stepNum) {
+    case 1:
+      yc1 = value;
+      toggleVisibility("step2", true);
+      toggleVisibility("step1", false);
+      break;
+    case 2:
+      yc2 = value;
+      toggleVisibility("step3", true);
+      toggleVisibility("step2", false);
+      break;
+    case 3:
+      yc3 = value;
+      toggleVisibility("step4", true);
+      toggleVisibility("step3", false);
+      break;
+    case 4:
+      yc4 = value;
+      toggleVisibility("step4", false);
+      toggleVisibility("loader", true);
+      setTimeout(evaluateAnswer, 1500);
+      break;
   }
 }
 
-// Show Result
-function showResult() {
-  hideElement("loader");
-  showElement("restart");
+// Answer evaluation
+function evaluateAnswer() {
+  toggleVisibility("loader", false);
+  toggleVisibility("restart", true);
 
-  const resultsMap = {
+  const result = yc1 + yc2 + yc3 + yc4;
+  const answers = {
     0: "FIVE",
     10: "FOUR",
     20: "SIX",
@@ -99,24 +116,38 @@ function showResult() {
     70: "THREE",
     80: "NINE",
     90: "SEVEN",
-    100: "EIGHT"
+    100: "EIGHT",
   };
 
-  const resultText = resultsMap[result] || "UNKNOWN";
-  playAudio(`sounds/${resultText.toLowerCase()}.mp3`);
-  document.getElementById("ans").innerHTML = `<h4 class="lineLeft">The Number You Thought of Was<br><br><i class="glow">${resultText}</i></h4>`;
+  const soundMap = {
+    FIVE: "sounds/five.mp3",
+    FOUR: "sounds/four.mp3",
+    SIX: "sounds/six.mp3",
+    ZERO: "sounds/zero.mp3",
+    ONE: "sounds/one.mp3",
+    TWO: "sounds/two.mp3",
+    TEN: "sounds/ten.mp3",
+    THREE: "sounds/three.mp3",
+    NINE: "sounds/nine.mp3",
+    SEVEN: "sounds/seven.mp3",
+    EIGHT: "sounds/eight.mp3",
+  };
+
+  const answer = answers[result] || "UNKNOWN";
+  playAudio(soundMap[answer] || "");
+  document.getElementById("ans").innerHTML = `
+    <h4 class="lineLeft">The Number You Thought of Was<br><br><i class="glow">${answer}</i></h4>
+  `;
 }
 
-// Feedback Confirmation
+// Feedback confirmation
 function feedback() {
   if (confirm("Opening Gmail or Email")) {
     document.getElementById("fb").href = "mailto:mohammmadibbudummyacc235@gmail.com";
-    vibrate([50, 100, 50]);
-    setTimeout(() => {
-      document.getElementById("fb").href = "#";
-    }, 2000);
+    playVibration([50, 100, 50]);
+    setTimeout(() => (document.getElementById("fb").href = "#"), 2000);
   } else {
-    vibrate([100]);
+    playVibration([100]);
     document.getElementById("fb").href = "#";
   }
 }
