@@ -1,4 +1,4 @@
-Here’s a README template for your project **GuessMaster**:
+ **GuessMaster**:
 
 ---
 
@@ -16,7 +16,6 @@ Here’s a README template for your project **GuessMaster**:
 ## **Technologies Used**
 - **Frontend:**
   - HTML, CSS, JavaScript
-  - Bootstrap for responsive design
   - Animations and transitions for a smooth user experience
   - Google Fonts for custom typography
   
