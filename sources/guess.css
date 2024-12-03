@@ -2,19 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Nova+Square&display=swap");
 
-/* Global Styles */
+/* Universal Styles */
 * {
-  margin: 0;
+  margin: 20px 50px 0;
   padding: 0;
-  box-sizing: border-box;
   font-family: "Roboto Slab", serif;
   text-align: center;
 }
 
-/* Body and Background */
+/* Body with Animated Background */
 body {
-  user-select: none;
   margin: auto;
+  user-select: none;
   overflow: auto;
   background: linear-gradient(
     315deg,
@@ -28,49 +27,53 @@ body {
   background-attachment: fixed;
 }
 
-/* Background Animation */
 @keyframes gradient {
-  0% {
-    background-position: 0% 0%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 0%;
-  }
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
 }
 
-/* Alerts for Online and Offline */
-#offline,
-#online {
+/* Notification Styles */
+#offline, #online {
   font-family: "Tiro Tamil", serif;
   display: none;
   margin-top: 5px;
   width: auto;
   font-size: 18px;
-  color: white;
   font-weight: bold;
   padding: 10px 8px;
   text-align: center;
   border-radius: 10px;
+  border: 2px solid;
 }
 
 #offline {
-  box-shadow: 0 0 2px 2px red;
+  color: white;
   background: red;
-  border: 2px solid #ef9a9a;
+  border-color: #ef9a9a;
+  box-shadow: 0 0 2px 2px red;
 }
 
 #online {
-  box-shadow: 0 0 2px 2px #37eb23;
+  color: white;
   background: #29f013;
-  border: 2px solid #1e7d14;
+  border-color: #1e7d14;
+  box-shadow: 0 0 2px 2px #37eb23;
 }
 
-/* Buttons */
+/* Marquee and HR */
+marquee {
+  border-radius: 60px;
+  color: white;
+  font-size: 24px;
+}
+
+hr { color: red; }
+
+/* Button Styles */
 button {
   font-family: "Nova Square", cursive;
+  text-align: center !important;
   box-shadow: 9px 2px 18px 9px #ef9a9a;
   border-radius: 40px;
   padding: 13px;
@@ -93,12 +96,12 @@ button:hover {
   text-transform: uppercase;
   border-radius: 30px;
   padding: 15px;
-  font-size: 36px;
+  font-size: 35px;
   border: 2px solid #112c20;
   background-color: #6b73c9;
 }
 
-/* Headers and Text */
+/* Typography */
 h1 {
   border-radius: 40px;
   background: palevioletred;
@@ -123,38 +126,7 @@ span {
   color: #06360a;
 }
 
-i {
-  font-size: 38px;
-  font-family: "Dancing Script", cursive;
-}
-
-/* Loader */
-#loader {
-  border: 16px solid black;
-  border-radius: 50%;
-  border-top: 16px solid #0052cc;
-  width: 120px;
-  height: 120px;
-  animation: spin 0.8s linear infinite;
-}
-
-.flex {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* Glowing Text */
-.glow {
+i, .glow {
   font-family: "Dancing Script", cursive;
   font-size: 50px;
   color: #fff;
@@ -175,81 +147,54 @@ i {
   }
 }
 
-/* Line Animations */
-.lineUp {
-  animation: 1s anim-lineUp cubic-bezier(0.18, 0.89, 0.32, 1.28);
+/* Loader */
+#loader {
+  border: 16px solid black;
+  border-radius: 50%;
+  border-top: 16px solid #0052cc;
+  width: 120px;
+  height: 120px;
+  animation: spin 0.8s linear infinite;
 }
 
-.lineDown {
-  animation: 1s anim-lineDown cubic-bezier(0.18, 0.89, 0.32, 1.28);
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.lineRight {
-  animation: 2s anim-lineRight cubic-bezier(0.18, 0.89, 0.32, 1.28);
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
-.lineLeft {
-  animation: 2s anim-lineLeft cubic-bezier(0.18, 0.89, 0.32, 1.28);
+/* Animations for Line Movement */
+.lineUp, .lineDown, .lineRight, .lineLeft {
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.18, 0.89, 0.32, 1.28);
 }
+
+.lineUp { animation-name: anim-lineUp; }
+.lineDown { animation-name: anim-lineDown; }
+.lineRight { animation-name: anim-lineRight; }
+.lineLeft { animation-name: anim-lineLeft; }
 
 @keyframes anim-lineUp {
-  0% {
-    opacity: 0;
-    transform: translateY(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-@keyframes anim-lineRight {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  0% { opacity: 0; transform: translateY(100%); }
+  100% { opacity: 1; transform: translate(0); }
 }
 
 @keyframes anim-lineDown {
-  0% {
-    opacity: 0;
-    transform: translateY(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  0% { opacity: 0; transform: translateY(-100%); }
+  100% { opacity: 1; transform: translate(0); }
+}
+
+@keyframes anim-lineRight {
+  0% { opacity: 0; transform: translateX(-100%); }
+  100% { opacity: 1; transform: translate(0); }
 }
 
 @keyframes anim-lineLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  body {
-    margin: 10px;
-    font-size: 16px;
-  }
-
-  button {
-    width: 180px;
-    font-size: 24px;
-  }
-
-  h1 {
-    font-size: 24px;
-    letter-spacing: 5px;
-  }
+  0% { opacity: 0; transform: translateX(100%); }
+  100% { opacity: 1; transform: translateY(0); }
 }
